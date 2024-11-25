@@ -9,3 +9,10 @@ export async function getTodosPosts() {
     const colecao = db.collection("posts");
     return colecao.find().toArray();
   }
+
+// Função para criar um post do banco de dados.
+export async function criarPost(novoPost) {
+  const db = conexao.db("imersao-instabytes");
+  const colecao = db.collection("posts");
+  return colecao.insertOne(novoPost);
+}
